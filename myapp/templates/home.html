@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}"> 
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}"> 
+    <title>Home</title>
+</head>
+<body>
+    <nav>
+        <a href="home.html"><img class="logo" src="{{ url_for('static', filename='png/logo.png') }}" alt="logo"></a>
+        <div class="menu">
+            <div class="btn">
+                <i class="fas fa-times close-btn"></i>
+            </div>
+            <a id="Home" href="home.html">Home</a>
+            <a id="Features" href="features.html">Features</a>
+            <a id="About" href="about.html">About Us</a>
+            <a id="Support" href="description.html">Help</a>
+        </div>
+        <div class="btn">
+            <i class="fas fa-bars menu-btn"></i>
+        </div>
+    </nav>
+
+    <header id="link1"><h1>Broken Link Checker</h1>
+    <h3 id="home-link">-Home-</h3></header>
+
+    <main class="container">
+        <div class="content">
+            <span class="blur"></span>
+            <span class="blur"></span>
+            <h2>Test your link</h2>
+            <p>Instantly see every broken outbound link on your site. Sort and filter the list to prioritize fixes.
+            
+                Check back regularly to find new broken links as we discover them. Nip them in the bud before they negatively impact
+                your SEO.</p>
+                <form  action="result.html" method="get">
+
+                    <div class="check">
+
+                       
+                        <input type="text" id="link"  class="text" placeholder="Enter domain or URL">
+                        <button class="button" onclick="checkLink()">Check</button>
+
+                </form>
+                <p id="result"></p>
+                <script>
+                    function checkLink() {
+                        var link = document.getElementById('link').value;
+                        console.log(link);
+                        fetch('/check-link', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                            },
+                            body: 'link=' + link
+                        })
+                        .then(response => response.json()) 
+                        .then(data => {
+                            document.getElementById('result').innerText = data.result
+                        })
+                        .catch(error => {
+                            console.error('A apărut o eroare:', error);
+                        });
+                    }
+                </script>
+                </div>
+                
+                
+        </div>
+        <div class="image"><img src="{{ url_for('static', filename='png/broken.png') }}" alt="chain_logo"></div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer_nav">
+                <ul><li><a id="Home" href="home.html">Home</a></li>
+                <li><a id="Features" href="features.html">Features</a></li>
+                <li><a id="About" href="about.html">About Us</a></li>
+                <li><a id="Support" href="description.html">Help</a></li>
+                </ul>
+            </div>
+        
+            <div class="footer_info">
+                <p>&copy; All Rights Reserved</p>
+                <p>Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

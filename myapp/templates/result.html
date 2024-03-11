@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}"> 
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">  
+    <title>Home</title>
+</head>
+<body>
+    <p id="result"></p>
+    <nav>
+        <a href="home.html"><img class="logo" src="{{ url_for('static', filename='png/logo.png') }}" alt="logo"></a>
+        <div class="menu">
+            <div class="btn">
+                <i class="fas fa-times close-btn"></i>
+            </div>
+            <a id="Home" href="home.html">Home</a>
+            <a id="Features" href="features.html">Features</a>
+            <a id="About" href="about.html">About Us</a>
+            <a id="Support" href="description.html">Help</a>
+        </div>
+        <div class="btn">
+            <i class="fas fa-bars menu-btn"></i>
+        </div>
+    </nav>
+
+    <header id="link1"><h1>Broken Link Checker</h1>
+    <h3 id="home-link">-Result-</h3></header>
+
+    <main class="container">
+        <div class="content">
+            <span class="blur"></span>
+            <span class="blur"></span>
+            
+            <h1>Rezultatul verificării linkului:</h1>
+            <p id="result">{{result}}</p>
+                </div>
+                
+                
+        </div>
+        <div class="image"><img src="{{ url_for('static', filename='png/broken.png') }}" alt="chain_logo"></div>
+    </main>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

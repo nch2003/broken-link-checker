@@ -1,0 +1,64 @@
+header {
+    color: #fff;
+    text-align: center;
+    padding: 17rem;
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+main{
+    font-family: "Arial", sans-serif;
+    font-size:1.2rem;
+    line-height: 1.6;
+    color:white;
+    margin-top:-50px;
+    margin-bottom:30px;
+    margin-right:20px;
+    right:-40px;
+    
+    padding:0;
+}
+main p{
+    width:50%;
+    font-size:1.5rem;
+    font-weight: bold;
+}
+main li{
+    list-style-type:square;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10rem;
+        font-size: 1rem;
+    }
+
+    main {
+        font-family: "Arial", sans-serif;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: white;
+        margin-top: -50px;
+        margin-bottom: 30px;
+        margin-right: 20px;
+        right: -20px;
+        margin-left: -15px;
+        padding: 0;
+    }
+
+    main p {
+        width: 50%;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-right: -40px;
+    }
+
+    main li {
+        list-style-type: square;
+        margin-left: 1.5rem;
+    }
+}

@@ -1,0 +1,95 @@
+header {
+    color: #fff;
+    text-align: center;
+    padding: 17rem;
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#home-link {
+    cursor: pointer;
+}
+
+main .header {
+    margin-bottom: 1rem;
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 5rem 2rem;
+}
+
+.features {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+   
+}
+
+.features .card {
+    background-color: #27272a;
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.features .card:hover {
+    background-color: #323232;
+    border-color: #fff;
+}
+
+.features .card span {
+    display: inline-block;
+    padding: 2px 9px;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.features .card h4 {
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.features .card p {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.blur {
+    position: absolute;
+    box-shadow: 0 0 1000px 50px #0c5acf;
+    z-index: -100;
+}
+
+main span {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #fff;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10rem;
+        font-size: 1rem;
+    }
+
+    main .features {
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
+    
+}
